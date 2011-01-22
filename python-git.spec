@@ -11,7 +11,9 @@ URL:		http://pypi.python.org/pypi/GitPython/
 Source0:	http://pypi.python.org/packages/source/G/GitPython/GitPython-%{version}-%{subver}.tar.gz
 # Source0-md5:	88a5972c28917d1c32ec28f358f620df
 BuildRequires:	python-devel
+BuildRequires:	python-modules
 BuildRequires:	python-setuptools
+BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 Obsoletes:	GitPython
 BuildArch:	noarch
