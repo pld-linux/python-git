@@ -1,15 +1,15 @@
 %define 	module	git
-%define		subver	beta1
-%define		rel		1
+%define		subver	RC1
+%define		rel	1
 Summary:	Python Git Library
 Name:		python-%{module}
-Version:	0.2.0
+Version:	0.3.2
 Release:	0.%{subver}.%{rel}
 License:	BSD
 Group:		Development/Languages
 URL:		http://pypi.python.org/pypi/GitPython/
-Source0:	http://pypi.python.org/packages/source/G/GitPython/GitPython-%{version}-%{subver}.tar.gz
-# Source0-md5:	88a5972c28917d1c32ec28f358f620df
+Source0:	http://pypi.python.org/packages/source/G/GitPython/GitPython-%{version}.%{subver}.tar.gz
+# Source0-md5:	849082fe29adc653a3621465213cab96
 BuildRequires:	python-devel
 BuildRequires:	python-modules
 BuildRequires:	python-setuptools
@@ -30,7 +30,7 @@ GitPython is a port of the grit library in Ruby created by Tom
 Preston-Werner and Chris Wanstrath.
 
 %prep
-%setup -q -n GitPython-%{version}-%{subver}
+%setup -q -n GitPython-%{version}.%{subver}
 
 %build
 %{__python} setup.py build
@@ -48,11 +48,25 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README CHANGES LICENSE AUTHORS
+%doc CHANGES LICENSE AUTHORS
 %dir %{py_sitescriptdir}/git
 %{py_sitescriptdir}/git/*.py[co]
+%dir %{py_sitescriptdir}/git/index
+%{py_sitescriptdir}/git/index/*.py[co]
 %dir %{py_sitescriptdir}/git/objects
 %{py_sitescriptdir}/git/objects/*.py[co]
+%dir %{py_sitescriptdir}/git/objects/submodule
+%{py_sitescriptdir}/git/objects/submodule/*.py[co]
+%dir %{py_sitescriptdir}/git/refs
+%{py_sitescriptdir}/git/refs/*.py[co]
+%dir %{py_sitescriptdir}/git/repo
+%{py_sitescriptdir}/git/repo/*.py[co]
+%dir %{py_sitescriptdir}/git/test
+%{py_sitescriptdir}/git/test/*.py[co]
+%dir %{py_sitescriptdir}/git/test/fixtures
+%{py_sitescriptdir}/git/test/fixtures/*
+%dir %{py_sitescriptdir}/git/test/lib
+%{py_sitescriptdir}/git/test/lib/*.py[co]
 %if "%{py_ver}" > "2.4"
 %{py_sitescriptdir}/GitPython-%{version}*.egg-info
 %endif
