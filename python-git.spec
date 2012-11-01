@@ -1,6 +1,6 @@
 %define 	module	git
 %define		subver	RC1
-%define		rel	1
+%define		rel	2
 Summary:	Python Git Library
 Name:		python-%{module}
 Version:	0.3.2
@@ -15,6 +15,7 @@ BuildRequires:	python-modules
 BuildRequires:	python-setuptools
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
+Requires:	python-gitdb
 Obsoletes:	GitPython
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
