@@ -29,7 +29,7 @@ GitPython is a port of the grit library in Ruby created by Tom
 Preston-Werner and Chris Wanstrath.
 
 %prep
-%setup -q -n GitPython-%{version}.%{subver}
+%setup -q -n GitPython-%{version}
 
 %build
 %{__python} setup.py build
