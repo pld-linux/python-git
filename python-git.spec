@@ -1,15 +1,13 @@
 %define 	module	git
-%define		subver	RC1
-%define		rel	2
 Summary:	Python Git Library
 Name:		python-%{module}
-Version:	0.3.2
-Release:	0.%{subver}.%{rel}
+Version:	0.3.2.1
+Release:	1
 License:	BSD
 Group:		Development/Languages
+Source0:	http://pypi.python.org/packages/source/G/GitPython/GitPython-%{version}.tar.gz
+# Source0-md5:	a8e8d3875d71c09993d078527d8c327e
 URL:		http://pypi.python.org/pypi/GitPython/
-Source0:	http://pypi.python.org/packages/source/G/GitPython/GitPython-%{version}.%{subver}.tar.gz
-# Source0-md5:	849082fe29adc653a3621465213cab96
 BuildRequires:	python-devel
 BuildRequires:	python-modules
 BuildRequires:	python-setuptools
