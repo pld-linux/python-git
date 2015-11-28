@@ -2,7 +2,7 @@
 Summary:	Python Git Library
 Name:		python-%{module}
 Version:	0.3.2.1
-Release:	1
+Release:	2
 License:	BSD
 Group:		Development/Languages
 Source0:	http://pypi.python.org/packages/source/G/GitPython/GitPython-%{version}.tar.gz
