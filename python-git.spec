@@ -12,7 +12,7 @@ BuildRequires:	python-devel
 BuildRequires:	python-modules
 BuildRequires:	python-setuptools
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 Requires:	python-gitdb
 Obsoletes:	GitPython
 BuildArch:	noarch
