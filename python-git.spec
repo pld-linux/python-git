@@ -1,12 +1,12 @@
-%define 	module	git
+%define		module	git
 Summary:	Python Git Library
 Name:		python-%{module}
-Version:	0.3.2.1
-Release:	2
+Version:	2.1.9
+Release:	1
 License:	BSD
 Group:		Development/Languages
-Source0:	http://pypi.python.org/packages/source/G/GitPython/GitPython-%{version}.tar.gz
-# Source0-md5:	a8e8d3875d71c09993d078527d8c327e
+Source0:	https://github.com/gitpython-developers/GitPython/archive/%{version}/GitPython-%{version}.tar.gz
+# Source0-md5:	8fbca41db973859cee8eeddf364b0d01
 URL:		http://pypi.python.org/pypi/GitPython/
 BuildRequires:	python-devel
 BuildRequires:	python-modules
@@ -64,6 +64,8 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitescriptdir}/git/test/fixtures/*
 %dir %{py_sitescriptdir}/git/test/lib
 %{py_sitescriptdir}/git/test/lib/*.py[co]
+%dir %{py_sitescriptdir}/git/test/performance
+%{py_sitescriptdir}/git/test/performance/*.py[co]
 %if "%{py_ver}" > "2.4"
 %{py_sitescriptdir}/GitPython-%{version}*.egg-info
 %endif
