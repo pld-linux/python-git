@@ -13,7 +13,7 @@ BuildRequires:	python-modules
 BuildRequires:	python-setuptools
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.710
-Requires:	python-gitdb
+Requires:	python-gitdb >= 2.0.0
 Obsoletes:	GitPython
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
