@@ -1,12 +1,12 @@
 %define		module	git
 Summary:	Python Git Library
 Name:		python-%{module}
-Version:	2.1.9
+Version:	2.1.11
 Release:	1
 License:	BSD
 Group:		Development/Languages
 Source0:	https://github.com/gitpython-developers/GitPython/archive/%{version}/GitPython-%{version}.tar.gz
-# Source0-md5:	8fbca41db973859cee8eeddf364b0d01
+# Source0-md5:	05e5f6be4887704c8643639c24e4e3c9
 URL:		http://pypi.python.org/pypi/GitPython/
 BuildRequires:	python-devel
 BuildRequires:	python-modules
