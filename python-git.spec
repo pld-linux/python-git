@@ -9,7 +9,7 @@ Summary:	Python Git Library
 Summary(pl.UTF-8):	Biblioteka Git dla Pythona
 Name:		python-git
 Version:	2.1.11
-Release:	2
+Release:	3
 License:	BSD
 Group:		Development/Languages/Python
 #Source0Download: https://github.com/gitpython-developers/GitPython/releases
