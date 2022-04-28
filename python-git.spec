@@ -1,3 +1,4 @@
+# NOTE: for python3 package see python3-git.spec
 #
 # Conditional build:
 %bcond_with	tests	# unit tests (require git checkout, not archive?)
@@ -10,7 +11,7 @@ Version:	2.1.15
 Release:	1
 License:	BSD
 Group:		Development/Languages/Python
-#Source0Download: https://github.com/gitpython-developers/GitPython/releases
+#Source0Download: https://github.com/gitpython-developers/GitPython/tags
 Source0:	https://github.com/gitpython-developers/GitPython/archive/%{version}/GitPython-%{version}.tar.gz
 # Source0-md5:	e6dfd0204f5b626f69ae904a2e392c91
 URL:		https://pypi.org/project/GitPython/
@@ -18,13 +19,15 @@ BuildRequires:	python-modules >= 1:2.7
 BuildRequires:	python-setuptools
 %if %{with tests}
 BuildRequires:	python-ddt >= 1.1.1
-BuildRequires:	python-gitdb >= 2.0.0
+BuildRequires:	python-gitdb >= 1:2.0.0
+BuildRequires:	python-gitdb < 1:3
+BuildRequires:	python-mock
+BuildRequires:	python-nose
 %endif
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
-%{?with_doc:BuildRequires:	sphinx-pdg}
+%{?with_doc:BuildRequires:	sphinx-pdg-2}
 Requires:	python-modules >= 1:2.7
-Obsoletes:	GitPython
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -66,7 +69,8 @@ Dokumentacja API biblioteki GitPython.
 %py_build %{?with_tests:test}
 
 %if %{with doc}
-%{__make} -C doc html
+%{__make} -C doc html \
+	SPHINXBUILD=sphinx-build-2
 %endif
 
 %install
@@ -83,7 +87,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS CHANGES LICENSE README.md
+%doc AUTHORS CHANGES LICENSE README.md TODO
 %dir %{py_sitescriptdir}/git
 %{py_sitescriptdir}/git/*.py[co]
 %{py_sitescriptdir}/git/index
